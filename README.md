@@ -1,42 +1,50 @@
 # hey there, vex here!
 
-I build low-level systems software in pure C23 — a vertically integrated
-multi-repo engine ecosystem where **everything is a pointer**. I work in tight
-pair-programming partnership with an AI coding assistant, and the codebase is
-engineered the way it is deliberately: explicit dereferences, one class per
-file, zero steady-state allocation, and a living constitution that both of us
-follow to the letter.
+just a dude writing serious C23 systems code in **very** unserious quantities.
 
-## what I'm building
+pair-programming with an AI in a tight loop, building a whole ecosystem out of
+pointers. everything is a pointer. no arrow sugar. no allocations on the hot
+path. just vibes and `(*ptr).field`.
 
-The `vexgraph` ecosystem: a relational C23 runtime driven up through GPU
-drivers, a retained UI toolkit and compositor, and a family of end-user
-applications — an IDE, a DAW, a spatial studio, a drawing app, and a 3D game
-engine.
+---
 
-```text
-R1 Host        hotcwap        — Kernel, OS windows, dynamic hot-loader
-R2 Behavior    vexspoke       — memory arena, BitPool, types, dest-last math
-R3 Drivers     graphvex       — Vulkan/WGPU, fonts, SDF, meshlets
-               api-haven      — MCP / AI / DB / asset connectors
-               language        — LSP/grammar dylibs
-               darkbase       — native vex database store
-R4 Interfaces  darling-framework — retained UI toolkit, compositor
-               sesh           — session sync, VPS relay
-R5 Apps        semicolon      — mini IDE
-               samplerate     — bare-metal DAW
-               darling-editor — spatial studio
-               drawling       — drawing studio
-               anti           — 3D game engine
-```
+## current projects
 
-## how I work
+- **anti** — 3D game engine. bindless, meshlets, physics. the name lives here and only here
+- **semicolon** — mini IDE. tiny ~5MB jGRASP/Zed energy
+- **samplerate** — bare-metal DAW. realtime mixer, spatial audio, 3D HRTF
+- **darling-editor** — spatial studio. figma × miro on an infinite canvas, HTML/SVG export
+- **drawling** — drawing studio. layers, brushes, flipaclip timeline energy
 
-- `(*ptr).field`, never `->` — a dereference is a memory hop and it stays visible.
-- One class per file; every struct field gets a symmetric getter/setter.
-- Dest-last. Two-layer access cap. Zero allocations on frame paths.
-- Every commit is atomic, buildable, and owned by one logical feature.
-- No auto-push unless I say so — history stays reviewable.
+## under the hood
 
-You can reach the whole thing under the
-[`vexgraph-ecosystem`](https://github.com/vexgraph-ecosystem) organization.
+the apps above all sit on the same stack, so it isn't N projects — it's one ecosystem:
+
+- **hotcwap** — kernel host. OS windows, dynamic hot-loader
+- **vexspoke** — the spoke. memory arena, bitpool, dest-last math
+- **graphvex** — GPU driver. vulkan/wgpu, fonts, sdf, meshlets
+- **api-haven** — connectors. mcp / ai / db / assets
+- **language** — grammar dylibs
+- **darkbase** — native database store
+- **darling-framework** — the UI toolkit + compositor
+- **sesh** — session sync, VPS relay
+
+## future projects
+
+- something that reacts to you — still plotting
+- a whiteboard that actually feels like a whiteboard
+- whatever the next "that's a fun idea, let me build it" turns out to be
+
+## the philosophy
+
+- `(*ptr).field`, never `->` — a dereference is a memory hop and i want to see it
+- one class per file. one problem in one file
+- zero steady-state allocation. bounded waits everywhere
+- every commit is buildable and bisectable, or it's not a commit
+- teardown top-down, `Memory_freeAll` dead last
+
+---
+
+i have an ecosystem, you might wanna check it out → [**vexgraph-ecosystem**](https://github.com/vexgraph-ecosystem)
+
+the constitution everything follows → [`preferences.md`](https://github.com/vexgraph-ecosystem/vexspoke/blob/main/preferences.md)

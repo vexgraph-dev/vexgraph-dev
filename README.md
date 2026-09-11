@@ -25,7 +25,7 @@ the apps above all sit on the same stack, so it isn't N projects — it's one ec
 - **[anti](https://github.com/vexgraph-ecosystem/anti)** — a spatial ide, maybe a multimedia engine, or people call a **game engine**
 - **[semicolon](https://github.com/vexgraph-ecosystem/semicolon)** — mini IDE. tiny jGRASP/Zed/JetBrains energy
 - **[samplerate](https://github.com/vexgraph-ecosystem/samplerate)** — bare-metal DAW. realtime mixer, spatial audio, 3D HRTF
-- **darling-editor** — spatial studio. figma × miro on an infinite canvas, HTML/SVG export
+- **[darling](https://github.com/vexgraph-ecosystem/darling)** — spatial studio. figma × miro on an infinite canvas, HTML/SVG/Web export
 - **[drawling](https://github.com/vexgraph-ecosystem/drawling)** — drawing studio. layers, brushes, animation, timelines
 
 ## the philosophy

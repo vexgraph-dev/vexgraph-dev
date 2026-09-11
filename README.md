@@ -1,4 +1,4 @@
-# hey there, vex here!
+# hey there, vex here! 🦊
 
 just a dude writing serious C23 systems code in **very** unserious quantities.
 
